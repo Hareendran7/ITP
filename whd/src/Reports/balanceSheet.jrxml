@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="balanceSheet" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="66a2e763-4bfb-4158-95d5-bd400d195f99">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select * from month_trans]]>
+	</queryString>
+	<field name="year" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="month" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="elect" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="water" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tele" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="rent" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="salary" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ret_damage" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stoc_expe" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="deliv" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="oth_exp" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="ret_inco" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="oth_inc" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_income" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="tot_expense" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="balance" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<group name="Group1">
+		<groupHeader>
+			<band height="92">
+				<staticText>
+					<reportElement uuid="42878d6d-55bc-4f0c-a5be-1d46a6d76102" x="0" y="20" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Retailer Income]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="4170fca0-9606-428c-b06b-4471b153c912" x="0" y="40" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Other]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="dd265ebd-865f-48db-bcd7-db7831ab310f" x="206" y="0" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{balance}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="172dcb46-3d6f-4fdd-ba06-9397a708942a" x="206" y="20" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ret_inco}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="cc65f418-0330-4d97-9c25-5e0a8cb4737e" x="206" y="40" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{oth_inc}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="9457b77f-88d5-4ed5-8f67-257fbcf1468e" x="345" y="80" width="112" height="1"/>
+				</line>
+				<textField>
+					<reportElement uuid="44dbb749-7fdc-41d4-a741-60e83e89bc38" x="345" y="60" width="141" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tot_income}+$F{balance}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="614bbaeb-0c37-49a4-8367-11cfb63e65f6" x="345" y="81" width="112" height="1"/>
+				</line>
+				<line>
+					<reportElement uuid="a3f765a3-7acc-48e6-abed-04ccb213b556" x="345" y="60" width="107" height="1"/>
+				</line>
+				<staticText>
+					<reportElement uuid="bfe95140-9880-4e5b-a0cc-71e802875f65" x="0" y="0" width="77" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Cash]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupHeader>
+			<band height="218">
+				<staticText>
+					<reportElement uuid="b0ae7240-4120-4150-a8f2-6a7ab957dd0b" mode="Opaque" x="0" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Liabilities]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="71542fc9-f3b3-4b4e-9387-ea260e6d30e6" x="206" y="18" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{stoc_expe}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="91cb1301-0da3-40bf-bb34-369fba88eee8" x="0" y="20" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Stock Expense]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="c963069c-6ddd-4e89-bb44-8ecdef819238" x="0" y="40" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Retailer Damage]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6de9d669-e9d7-4244-85be-e41ebeb58808" x="0" y="60" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Delivery]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="adfdc87e-2ce8-4dd1-a2a5-f1d36e1065b2" x="0" y="80" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Employee Salary]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="6742acd1-37dd-4690-81d7-772e63312aad" x="0" y="100" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Electricity]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ad38cb42-369a-4b07-9b3b-303c14144166" x="0" y="120" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Water]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="36da6432-658f-4f37-b763-b7c5872d1f18" x="0" y="140" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Telephone]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="bdc9555f-5d71-4c85-8799-2ad7f0dc4461" x="0" y="160" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Company Rent]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="e6ce96c2-feb5-4203-9086-1a19bb9cafde" x="206" y="40" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ret_damage}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="ee30d9ef-4014-4487-b444-9bcefdb4436f" x="206" y="60" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{deliv}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="b558a765-c7f6-44d8-9044-f6dd6716ca1e" x="0" y="180" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Other]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="5313cc5a-625e-4335-a54d-6452fb85b41d" x="206" y="80" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{salary}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="e7337841-2924-4d8d-978a-5fcd27546704" x="206" y="100" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{elect}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="8a81b3fd-9aeb-4f89-b297-ae42874a2744" x="206" y="120" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{water}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="7c7a594f-4961-4fad-ad68-4e3b278b45ae" x="206" y="140" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tele}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="62e6ec82-1139-48e1-8970-9f1fa5ff3ab8" x="206" y="160" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rent}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="23607f3f-bb52-4082-ba55-36b0ebc46220" x="206" y="180" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{oth_exp}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="19f6eb98-e453-4e55-bcdd-02e807aa49db" x="352" y="198" width="100" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tot_expense}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="480837d4-39de-4b33-bcf4-c7184ccf86a1" x="345" y="198" width="100" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupHeader>
+			<band height="100">
+				<staticText>
+					<reportElement uuid="f40f6971-7ba7-4510-9bca-24032a9154c2" mode="Opaque" x="0" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+					<textElement textAlignment="Center">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Equity]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="e612e0a0-4fa5-49d3-8d7c-c47117ac9193" x="0" y="20" width="100" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Owner's Equity]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="79a5666f-786a-4f8c-b945-cde29d6c3569" x="352" y="20" width="193" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tot_income}+$F{balance}-$F{tot_expense}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement uuid="5cd5c6a1-8ffc-4d91-bbe8-a94408608d90" x="0" y="60" width="206" height="20" forecolor="#666666"/>
+					<textElement>
+						<font size="12" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Total Liabilities and Owners Equity]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="65472b18-9b65-461d-9d9c-0890e3b45927" x="345" y="61" width="141" height="20"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tot_income}+$F{balance}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement uuid="3a825333-c021-471f-9487-196e8607ebe8" x="345" y="60" width="100" height="1"/>
+				</line>
+				<line>
+					<reportElement uuid="5c8d4369-6283-47d5-aee7-2cb2ad26fc3b" x="345" y="81" width="100" height="1"/>
+				</line>
+				<line>
+					<reportElement uuid="ec23601b-f187-42e6-86ce-dff055631f4a" x="345" y="82" width="100" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupHeader>
+			<band height="32"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="15f7dbc7-af8b-4c79-a20e-f110a919897c" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="87a415c7-fb1a-4ca4-8491-04453aacd57b" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Direct2Door]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="ef4b932a-743f-4b46-b02d-b5ebff3f0b79" x="472" y="43" width="103" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Balance Sheet]]></text>
+				</staticText>
+				<textField>
+					<reportElement uuid="c5ea7c00-756d-4e1d-be4f-4bac216e4033" x="535" y="63" width="46" height="20" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="10" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="da5eaf6d-5879-4f6e-9311-858363f49413" x="482" y="63" width="53" height="20" forecolor="#FFFFFF"/>
+					<textElement>
+						<font isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{month}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<staticText>
+				<reportElement uuid="13b0ed9d-e810-4954-a59e-187e641c98d3" mode="Opaque" x="0" y="0" width="100" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Assets]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20"/>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="75948282-bb28-441c-9626-9a0a4f5bdf4c" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="d47c9f83-7e0a-4b29-b101-80938f60e814" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="d0e81080-738f-4294-9467-7788143f9dc1" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

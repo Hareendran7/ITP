@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ValuedProducts" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4946a5ea-ed8b-4ebf-a331-f9254efca7b4">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select s.comp_name AS Company,o.prod_name AS Product,sum(o.qty) AS Quantity,sum(o.total) AS Cost From supplier s,order_1 o where s.supp_id=o.supp_id]]>
+	</queryString>
+	<field name="Company" class="java.lang.String"/>
+	<field name="Product" class="java.lang.String"/>
+	<field name="Quantity" class="java.math.BigDecimal"/>
+	<field name="Cost" class="java.lang.Double"/>
+	<group name="Group1">
+		<groupHeader>
+			<band height="33">
+				<line>
+					<reportElement uuid="0a6e0287-6196-421c-b241-fd8b14d75d3a" x="-20" y="32" width="595" height="1" forecolor="#666666"/>
+				</line>
+				<staticText>
+					<reportElement uuid="447efc39-7a1c-4926-b4ea-e1f35b1200bd" x="417" y="12" width="138" height="20"/>
+					<textElement/>
+					<text><![CDATA[Cost]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="8ae1adb7-3d52-4d93-a601-37b654835bff" x="156" y="12" width="138" height="20"/>
+					<textElement/>
+					<text><![CDATA[Product]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="7f3829e6-de60-47c0-9681-2be16d66f761" x="0" y="12" width="138" height="20"/>
+					<textElement/>
+					<text><![CDATA[Company]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="847e37f5-0c4a-4a89-bd77-d1134dd7d5ff" x="309" y="12" width="95" height="20"/>
+					<textElement/>
+					<text><![CDATA[Quantity]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupHeader>
+			<band height="3"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupHeader>
+			<band height="7"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupHeader>
+			<band height="10"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="a5e3f3ea-d93e-4c05-9f15-6452ca5a455e" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="04841f0e-bd3f-40af-bdde-4749bc91a8e2" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Direct 2 Door]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="a5692bad-1b91-4513-a076-f1a20f61cf74" x="347" y="43" width="228" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[WarehouseManagementSystem]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="35">
+			<staticText>
+				<reportElement uuid="aaeb5b2c-c953-450f-9a39-6943bef2e319" mode="Opaque" x="0" y="0" width="555" height="20" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ValuedProducts]]></text>
+			</staticText>
+			<line>
+				<reportElement uuid="443b11bd-46fe-486d-a025-457d3ee5c768" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20">
+			<textField>
+				<reportElement uuid="3ff1f11e-39f8-4bfa-b78d-17c3e9b645f1" x="309" y="0" width="95" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7b5ced88-4cd4-4566-a853-b7da74ac6625" x="0" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Company}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="85e7e570-698b-4218-ab24-e6abe8de164b" x="417" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Cost}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f48b794f-4b82-43b1-bd0a-365e3691991d" x="156" y="0" width="138" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Product}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="2d4a10ea-2ceb-47dd-9908-ef02bcc322c1" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="80f8ba7c-5659-4f08-8bc8-01fd0f1422a9" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="565ce108-1e13-4b40-94eb-9238bed16a05" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>

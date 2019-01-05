@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ValuedSuppliers" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b99f3a85-05da-464e-bffd-7c0e3d381c70">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[Select s.comp_name AS Company,sum((st.quantity*p.buy_price)) as Commission From supplier s,product p,stock st where s.supp_id=p.supp_id And st.prod_id=p.prod_id ]]>
+	</queryString>
+	<field name="Company" class="java.lang.String"/>
+	<field name="Commission" class="java.lang.Double"/>
+	<group name="Group1">
+		<groupHeader>
+			<band height="33">
+				<line>
+					<reportElement uuid="a24d9db5-bfc4-42c7-80f5-bb7050f061d8" x="-20" y="32" width="595" height="1" forecolor="#666666"/>
+				</line>
+				<staticText>
+					<reportElement uuid="743cb9de-a20c-4c22-924c-9a0698119fc8" x="0" y="13" width="277" height="20"/>
+					<textElement/>
+					<text><![CDATA[Company]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="eb89d060-67dc-430d-9317-7beaa1c803fb" x="277" y="12" width="277" height="20"/>
+					<textElement/>
+					<text><![CDATA[Commission]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group2">
+		<groupHeader>
+			<band height="8"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group3">
+		<groupHeader>
+			<band height="7"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<group name="Group4">
+		<groupHeader>
+			<band height="10"/>
+		</groupHeader>
+		<groupFooter>
+			<band/>
+		</groupFooter>
+	</group>
+	<background>
+		<band/>
+	</background>
+	<title>
+		<band height="72">
+			<frame>
+				<reportElement uuid="42850eac-66c7-4dd4-bd96-cd55a2f96ff1" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#006699"/>
+				<staticText>
+					<reportElement uuid="370a9fd2-a4be-4465-b43c-4657fa1a7039" x="20" y="20" width="234" height="43" forecolor="#FFFFFF"/>
+					<textElement>
+						<font size="34" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Direct 2 Door]]></text>
+				</staticText>
+				<staticText>
+					<reportElement uuid="34303544-1cff-4980-a63f-548bd3962561" x="353" y="43" width="222" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right">
+						<font size="14" isBold="false"/>
+					</textElement>
+					<text><![CDATA[WarehouseManagementSystem]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="13"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="21">
+			<line>
+				<reportElement uuid="935e9495-a550-4b05-a410-5d4d7ddd62b4" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+			</line>
+			<staticText>
+				<reportElement uuid="04d07e4f-e460-4f2c-80c8-b2659b41fa14" mode="Opaque" x="0" y="1" width="555" height="19" forecolor="#006699" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Center">
+					<font size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Valued Suppliers]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="44">
+			<textField>
+				<reportElement uuid="27d20afe-3813-46f3-a791-726876263794" x="0" y="0" width="277" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Company}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="666f4d1e-73ba-4684-9853-c0e811795dc4" x="277" y="0" width="277" height="20"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[$F{Commission}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band/>
+	</columnFooter>
+	<pageFooter>
+		<band height="17">
+			<textField>
+				<reportElement uuid="6e769d85-4ea3-40f1-98ff-8ef30de4e5f0" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement uuid="538d6e66-5357-4f3b-913f-b4893ec78d80" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="103f2a54-5701-4db0-9350-23d96a3549f7" x="0" y="4" width="100" height="13"/>
+				<textElement/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band/>
+	</summary>
+</jasperReport>
